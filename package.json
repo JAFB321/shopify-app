@@ -21,8 +21,12 @@
     "koa-session": "^6.1.0",
     "next": "^10.0.6",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "store-js": "^2.0.4"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.0.0"
+  }
 }
