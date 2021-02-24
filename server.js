@@ -8,8 +8,9 @@ const session = require('koa-session');
 
 dotenv.config();
 
+// Shopify GraphQl proxy
 const {default: graphQLProxy, ApiVersion} = require('@shopify/koa-shopify-graphql-proxy');
-// const {apiVersion} = require('@shopify/koa-shopify-graphql-proxy')
+
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
