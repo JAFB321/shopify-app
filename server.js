@@ -12,7 +12,7 @@ dotenv.config();
 const {default: graphQLProxy, ApiVersion} = require('@shopify/koa-shopify-graphql-proxy');
 
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+const port = parseInt(process.env.PORT, 10) || 2345;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
