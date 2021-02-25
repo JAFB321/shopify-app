@@ -92,10 +92,6 @@ export const ProductList = () => {
           }}
         />
       </Card>
-
-      {/* {
-          nodes.map((product) => <p key={product.id}>{product.title}</p>)
-        } */}
     </>
   )
 }
