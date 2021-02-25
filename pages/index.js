@@ -21,16 +21,16 @@ const Index = () => {
 
     return (
         <Page>
-            <Layout>
-                <ResourcePicker
-                    resourceType="Product"
-                    showVariants={false}
-                    open={modal.open}
-                    onCancel={() => setModal({ open: false })}
-                    onSelection={handleSelection}
-                />
-                {emptyState
-                    ?
+            <ResourcePicker
+                resourceType="Product"
+                showVariants={false}
+                open={modal.open}
+                onCancel={() => setModal({ open: false })}
+                onSelection={handleSelection}
+            />
+            {emptyState
+                ?
+                <Layout>
                     <EmptyState
                         heading="Manage yor custom products"
                         action={{
@@ -40,10 +40,10 @@ const Index = () => {
                         image="https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg"
                     >
                     </EmptyState>
-                    :
-                    <ProductList></ProductList>
-                }
-            </Layout>
+                </Layout>
+                :
+                <ProductList />
+            }
         </Page>
     );
 }
