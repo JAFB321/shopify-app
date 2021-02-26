@@ -40,8 +40,8 @@ export const ProductList = () => {
     }
   });
 
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>Error...</div>
+  if (loading) return <div></div>
+  if (error) return <div></div>
 
   const { nodes } = data;
 
