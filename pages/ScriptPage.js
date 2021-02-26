@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { Button, Card, Layout, Page, ResourceList, Stack } from '@shopify/polaris'
+import { ScriptTagList } from '../components/ScriptTagList';
 
 
 const CREATE_SCRIPT_TAG = gql`
@@ -49,57 +50,25 @@ const srcSCRIPT = 'https://jafb321testapp2.loca.lt/test-script.js';
 
 const ScriptPage = () => {
 
-  const { data, error, loading } = useQuery(GET_SCRIPT_TAGS);
+  // const { data, error, loading } = useQuery(GET_SCRIPT_TAGS);
 
-  const [addScript, { data: addScriptData }] = useMutation(CREATE_SCRIPT_TAG, {
-    refetchQueries: [{ query: GET_SCRIPT_TAGS }]
-  });
-  const [deleteScript, { data: delScriptData }] = useMutation(DELETE_SCRIPT_TAG, {
-    refetchQueries: [{ query: GET_SCRIPT_TAGS }]
-  });
+  // const [addScript, { data: addScriptData }] = useMutation(CREATE_SCRIPT_TAG, {
+  //   refetchQueries: [{ query: GET_SCRIPT_TAGS }]
+  // });
+  // const [deleteScript, { data: delScriptData }] = useMutation(DELETE_SCRIPT_TAG, {
+  //   refetchQueries: [{ query: GET_SCRIPT_TAGS }]
+  // });
 
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>Error...</div>
+  // if (loading) return <div>Loading...</div>
+  // if (error) return <div>Error...</div>
 
 
   return (
-    <div>
-      <p>
-        Scripts: {data.scriptTags.edges.length}
-      </p>
-      {
-        data.scriptTags.edges.map((item) => (
-          <div key={item.node.id}>
-            <p>{item.node.id}</p>
-            <Button
-              onClick={() => {
-                deleteScript({
-                  variables:{
-                    id: item.node.id
-                  }
-                })
-              }}
-            >
-              Delete
-              </Button>
-          </div>
-        ))
-      }
-      <Button
-        onClick={() => {
-          addScript({
-            variables: {
-              Script: {
-                src: srcSCRIPT,
-                displayScope: 'ALL'
-              }
-            }
-          });
-        }}
-      >
-        Agregar
-      </Button>
-    </div>
+    <Page>
+      <Layout >
+        <ScriptTagList />
+      </Layout>
+    </Page>
   )
 }
 
