@@ -48,7 +48,7 @@ mutation scriptTagDelete($id: ID!) {
 
 const srcSCRIPT = 'https://jafb321testapp2.loca.lt/test-script.js';
 
-const ScriptPage = () => {
+const ScriptPage = () => { 
 
   // const { data, error, loading } = useQuery(GET_SCRIPT_TAGS);
 

@@ -51,13 +51,13 @@ export const ScriptTagList = () => {
     const { data, error, loading } = useQuery(GET_SCRIPT_TAGS);
 
 
-
+    console.log('render')
     if (error) return <div>Error...</div>
     if (loading) return <div>Loading...</div>
 
     console.log(data)
-    const { nodes } = data;
-
+    const items = data.scriptTags.edges;
+    console.log(items); 
 
     return (
         <Card>
@@ -65,11 +65,11 @@ export const ScriptTagList = () => {
             <ResourceList
                 showHeader
                 resourceName={{ singular: 'Script', plural: 'Scripts' }}
-                items={nodes}
+                items={items.map((item) => item.node)}
                 renderItem={(item) => {
                     return (
                         <ResourceList.Item id={item.id} accessibilityLabel="Asd">
-                            <h1>{item.id}</h1>
+                            <h1>{item.src}</h1>
                         </ResourceList.Item>
                     );
                 }}

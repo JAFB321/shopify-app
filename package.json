@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
-    "tunel": "lt --port 3001 --subdomain jafb321test-app",
+    "tunel": "lt --port 3001 --subdomain jafb321test-app2",
     "build": "next build"
   },
   "dependencies": {
