@@ -1,7 +1,5 @@
-console.log('This is comming from a script tag');
 
-const header = $('#shopify-section-header');
 
-header.prepend('<div>Hello!! This text is coming a script tag!!</div>')
-.css({'background': 'red', 'text-align': 'center', 'padding': '10px 0'});
+const seedsScript = 'https://seeds-cdn.s3.amazonaws.com/js/joinseeds.js';
 
+new JoinSeeds("join-seeds", { "org_id": "my-custom-join-id", "campaign_name": "testing-button", "button_theme": "light", "multistep_theme": "light" });
